@@ -7,7 +7,7 @@ class Menu extends React.Component {
             <header>
                 <h1>
                     <img src={menup.img} alt="logo"/>
-                    Hello, this is my beatiful app.<br />My name is {menup.names} {menup.last}
+                    Hello, this is my beautiful app.<br />My name is {menup.names} {menup.last}
                 </h1>
             </header>
         );
