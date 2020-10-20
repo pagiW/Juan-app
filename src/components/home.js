@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './images/logo1.jpeg';
 import './styles/general.css';
 import Menu from './mini-c/Menu.js';
+import { Link } from 'react-router-dom';
 
 class Home extends React.Component {
     state = {}
@@ -14,14 +15,17 @@ class Home extends React.Component {
             [e.target.name]: e.target.value,
         })
     }
+    handleSubmit = e => {
+        e.preventDefault();
+    }
     render() {
         return (
             <div>
                 <Menu names={this.state.firstName} last={this.state.lastName} img={logo}/>
-                <form action='hello'>
+                <form onSubmit={this.handleSubmit}>
                     <input type="text" name="firstName" placeholder="firstName" onChange={this.handleChange} />
                     <input type="text" name="lastName" placeholder="lastName" onChange={this.handleChange} />
-                    <button onClick={this.handleClick}>click me!</button>
+                    <button onClick={this.handleClick}><Link to="home/hello">click me!</Link></button>
                 </form>
             </div>
         )
